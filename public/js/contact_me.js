@@ -12,11 +12,33 @@ $(function() {
             var email = $("input#email").val();
             var phone = $("input#phone").val();
             var message = $("textarea#message").val();
+            var captchaResponse = $(".g-recaptcha-response").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
+            $.ajax({
+                url: "https://www.google.com/recaptcha/api/siteverify",
+                type: "POST",
+                data: {
+                    secret: '6LfP-BYTAAAAAAOWR9OkXRZ_chDcr6i6fAkT0Bbt',
+                    response: captchaResponse
+                },
+                cache: false,
+                success: function() {
+                    // Don't do anything, all is good :)
+                },
+                error: function() {
+                    // Fail message
+                    $('#success').html("<div class='alert alert-danger'>");
+                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                        .append("</button>");
+                    $('#success > .alert-danger').append("<strong>Please fill out the Captcha (above the button) to prove you are a human and not a bot");
+                    $('#success > .alert-danger').append('</div>');
+                    return;
+                },
+            })
             $.ajax({
                 url: "/contact",
                 type: "POST",
