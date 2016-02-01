@@ -1,3 +1,13 @@
 .g-recaptcha div {
   margin: auto;
 }
+
+.logo {
+  content:url("/img/white_logo.png")
+}
+
+@media (max-width: 767px) {
+  .logo {
+    content:url("/img/white_logo_small.png")
+  }
+}
