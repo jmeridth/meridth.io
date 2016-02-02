@@ -156,7 +156,7 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted">We currently have over 15 years of production experience in both small business and enterprise capacities.  Click contact link above and send us a message if you're interested in joining the team or need help with a current project.</p>
+              <p class="large text-muted">We currently have over <%= @years_experience %> years of production experience in small business and enterprise software development.  Fill out contact form below and send us a message if you're interested in joining the team or need help with a future/current project.</p>
             </div>
         </div>
     </div>
@@ -198,7 +198,7 @@
                         <div class="clearfix"></div>
                         <div class="col-lg-12">
                           <div id="success"></div>
-                          <div class="g-recaptcha" data-sitekey="6LfP-BYTAAAAAPcKEhZpXx9byYNENMSxXsx0wm2u"></div>
+                          <div class="g-recaptcha" data-theme="dark" data-sitekey="<%= @recaptcha_sitekey %>"></div>
                         </div>
                         <div class="clearfix">&nbsp;</div>
                         <div class="col-lg-12 text-center">

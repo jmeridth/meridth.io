@@ -19,34 +19,14 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://www.google.com/recaptcha/api/siteverify",
-                type: "POST",
-                data: {
-                    secret: '6LfP-BYTAAAAAAOWR9OkXRZ_chDcr6i6fAkT0Bbt',
-                    response: captchaResponse
-                },
-                cache: false,
-                success: function() {
-                    // Don't do anything, all is good :)
-                },
-                error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Please fill out the Captcha (above the button) to prove you are a human and not a bot");
-                    $('#success > .alert-danger').append('</div>');
-                    return;
-                },
-            })
-            $.ajax({
                 url: "/contact",
                 type: "POST",
                 data: {
                     name: name,
                     phone: phone,
                     email: email,
-                    message: message
+                    message: message,
+                    captchaResponse: captchaResponse
                 },
                 cache: false,
                 success: function() {
@@ -62,12 +42,12 @@ $(function() {
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
-                error: function() {
+                error: function(error) {
                     // Fail message
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>" + error.responseText + "</strong>");
                     $('#success > .alert-danger').append('</div>');
                 },
             })
