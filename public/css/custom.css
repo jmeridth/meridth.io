@@ -6,8 +6,16 @@
   content:url("/img/white_logo.png")
 }
 
+.navbar-brand {
+  padding: 0px 15px;
+}
+
 @media (max-width: 767px) {
   .logo {
     content:url("/img/white_logo_small.png")
+  }
+
+  .navbar-brand {
+    padding: 10px 15px;
   }
 }
