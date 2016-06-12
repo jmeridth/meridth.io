@@ -5,3 +5,4 @@ tmp/**/*
 pids/
 .DS_Store
 .env
+*.swp
