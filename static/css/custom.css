@@ -3,7 +3,7 @@
 }
 
 .logo {
-  content:url("/img/white_logo.png")
+  content:url("/static/img/white_logo.png")
 }
 
 .navbar-brand {
@@ -12,7 +12,7 @@
 
 @media (max-width: 767px) {
   .logo {
-    content:url("/img/white_logo_small.png")
+    content:url("/static/img/white_logo_small.png")
   }
 
   .navbar-brand {

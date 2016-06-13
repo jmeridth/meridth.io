@@ -7,7 +7,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    years_experience = date.today().year - 2000
+    current_year = date.today().year
+    years_experience = current_year - 2000
     recaptcha_sitekey = os.environ['MERIDTH_IO_RECAPTCHA_SITEKEY']
     return render_template('index.html', years_experience=years_experience,
                            recaptcha_sitekey=recaptcha_sitekey)
