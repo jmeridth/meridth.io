@@ -1,19 +1,7 @@
-import os
-import re
-
 from datetime import date
 from flask import Flask, render_template
 
 app = Flask(__name__)
-
-
-def is_email_address_valid(email):
-    """Validate the email address using a regex."""
-    pattern = ("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@"
-               "[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")
-    if not re.match(pattern, email):
-        return False
-    return True
 
 
 @app.route("/")
