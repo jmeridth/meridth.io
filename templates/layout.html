@@ -76,8 +76,8 @@
     </nav>
 
     {% block body %}{% endblock %}
+    {% include 'footer.html' %}
 
-    {% extends "footer.html" %}
     <!-- jQuery -->
     <script src="{{url_for('static',filename='js/jquery.js')}}"></script>
 
