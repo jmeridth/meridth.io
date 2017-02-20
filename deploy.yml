@@ -1,0 +1,17 @@
+---
+- name: deploy
+  hosts: webservers
+  tasks:
+    - git:
+        repo: git@github.com:jmeridth/meridth.io.git
+        dest: /var/www/meridth.io/html
+
+    - service:
+        name: meridthio
+        state: restarted
+      become: true
+
+    - service:
+        name: nginx
+        state: restarted
+      become: true
