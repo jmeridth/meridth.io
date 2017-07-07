@@ -1,6 +1,7 @@
 venv
 .python-version
 .bundle
+*.retry
 db/*.sqlite3
 log/*.log
 tmp/**/*
