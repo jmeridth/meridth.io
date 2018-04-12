@@ -17,4 +17,4 @@ stop : ## stop containers
 
 .PHONY : deploy
 deploy: ## deploy the website
-	ansible-playbook deploy.yml -i hosts -vvvv
+	ansible-playbook deploy.yml -i hosts -vv
