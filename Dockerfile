@@ -1,4 +1,4 @@
-FROM python:3.6.5-alpine3.7
+FROM python:3.7-alpine3.8
 
 RUN apk update && apk upgrade && apk --update add \
   python3-dev build-base linux-headers pcre-dev
