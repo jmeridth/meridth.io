@@ -1,11 +1,5 @@
 version: '3'
 services:
-  nginx:
-    container_name: meridthio_nginx
-    image: nginx
-    ports:
-      - "8080:80"
-
   flask:
     container_name: meridthio_flask
     build: .
