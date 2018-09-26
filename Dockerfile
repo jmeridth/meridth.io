@@ -1,11 +1,11 @@
-FROM python:3.7-alpine3.8
+FROM ubuntu:18.04
 
-RUN apk update && apk upgrade && apk --update add \
-  python3-dev build-base linux-headers pcre-dev
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+  python3-dev build-essential python-pip
 
 WORKDIR /code
 COPY . /code
 
 EXPOSE 5000
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install -r requirements.txt
 ENTRYPOINT ["python", "wsgi.py"]
