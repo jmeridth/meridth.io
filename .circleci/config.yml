@@ -1,0 +1,94 @@
+defaults: &defaults
+    working_directory: ~/code
+    docker:
+      - image: circleci/python:3.7.0-stretch-node-browsers
+
+version: 2
+jobs:
+  build-images:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - setup_remote_docker:
+          docker_layer_caching: true
+
+      - run:
+          name: Install Docker client
+          command: |
+            set -x
+            VER="18.06.1-ce"
+            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            sudo mv -fv /tmp/docker/* /usr/bin
+
+      - run: mkdir -p workspace
+
+      - run:
+          name: Build Image
+          command: |
+            SHORT_SHA=${CIRCLE_SHA1:0:10}
+            TAG=$(cat ~/truelink/CURRENT_SPRINT).$CIRCLE_BUILD_NUM.$SHORT_SHA
+            make build
+            docker tag meridthio_flask:latest meridth/website:$TAG
+            docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+            docker push meridth/website:$TAG
+            docker rmi meridth/website:$TAG
+            docker rmi meridthio_flask
+
+      - persist_to_workspace:
+          root: workspace
+          paths:
+            - version
+
+  deploy:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - run:
+          name: Create Ansible vault password file
+          command: echo $ANSIBLE_VAULT_PASSWORD > ansible_vault_password.txt
+
+      - run:
+          name: Install Ansible
+          command: |
+            sudo sh -c 'echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list'
+            sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+            sudo apt-get update
+            sudo apt-get install -y ansible
+            echo ansible --version
+
+      - attach_workspace:
+          at: ~/code/workspace
+
+      - run:
+          name: Deploy
+          command: |
+            cp .env.template .env
+            VERSION=$(cat ~/code/workspace/version)
+            make TAG=$VERSION deploy
+
+      - run:
+          name: Tag version
+          command: |
+            VERSION=$(cat ~/code/workspace/version)
+            git tag $VERSION HEAD
+            git push origin --tags
+
+workflows:
+  version: 2
+  pr-build:
+    jobs:
+      - build-images:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build-images
+          filters:
+            branches:
+              only: master

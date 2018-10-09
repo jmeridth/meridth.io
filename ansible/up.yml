@@ -1,0 +1,46 @@
+---
+- name: deploy
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: set up aws connection info
+      set_fact:
+        aws_connection_info: &aws_connection_info
+          aws_access_key: "{{ secure_aws_access_key }}"
+          aws_secret_key: "{{ secure_aws_secret_key }}"
+          region: us-west-1
+      no_log: yes
+
+    - name: ensure IAM instance role exists
+      iam_role:
+        name: ecsInstanceRole
+        assume_role_policy_document: "{{ lookup('file','ec2-trust-policy.json') }}"
+        state: present
+        create_instance_profile: yes
+        managed_policy:
+        - AmazonEC2ContainerServiceforEC2Role
+        <<: *aws_connection_info
+
+    - name: ensure IAM service role exists
+      iam_role:
+        name: ecsServiceRole
+        assume_role_policy_document: "{{ lookup('file','ecs-trust-policy.json') }}"
+        state: present
+        create_instance_profile: no
+        managed_policy:
+        - AmazonEC2ContainerServiceRole
+        <<: *aws_connection_info
+
+    - name: ensure AWSServiceRoleForECS role exists
+      iam_role_facts:
+        name: AWSServiceRoleForECS
+        <<: *aws_connection_info
+      register: iam_role_result
+
+    - name: Create ECS Cluster
+      ecs_cluster:
+        state: present
+        name: meridthio-cluster
+        <<: *aws_connection_info
+      register: cluster_output

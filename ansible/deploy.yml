@@ -1,0 +1,55 @@
+---
+- name: deploy
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: set up aws connection info
+      set_fact:
+        aws_connection_info: &aws_connection_info
+          aws_access_key: "{{ secure_aws_access_key }}"
+          aws_secret_key: "{{ secure_aws_secret_key }}"
+          region: us-west-1
+      no_log: yes
+
+    - name: Create ECS Task Definition
+      ecs_taskdefinition:
+        state: present
+        family: meridthio-family
+        essential: true
+        containers:
+        - name: meridthio-flask
+          cpu: 10
+          essential: true
+          image: "meridth/website:latest"
+          memory: 512
+          portMappings:
+          - containerPort: 5000
+            hostPort: 80
+          logConfiguration:
+            logDriver: awslogs
+            options:
+              awslogs-group: ecs
+              awslogs-region: us-west-1
+        <<: *aws_connection_info
+      register: task_definition_output
+
+    - name: Start Task
+      ecs_task:
+        operation: run
+        cluster: "{{ cluster_output.cluster.clusterName }}"
+        task_definition: "{{ task_definition_output.taskdefinition.family }}"
+        count: 1
+        started_by: ansible_user
+        <<: *aws_connection_info
+      register: task_output
+
+    - name: Create ECS Service
+      ecs_service:
+        state: present
+        name: meridthio-service
+        cluster: "{{ cluster_output.cluster.clusterName }}"
+        task_definition: "{{ task_definition_output.taskdefinition.family }}"
+        desired_count: 1
+        <<: *aws_connection_info
+
