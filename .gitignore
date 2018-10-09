@@ -1,12 +1,4 @@
-venv
-.python-version
-.bundle
-*.retry
-db/*.sqlite3
-log/*.log
-tmp/**/*
-pids/
-.DS_Store
-.env
-*.swp
-*.pyc
+_site
+.sass-cache
+Gemfile.lock
+*.gem

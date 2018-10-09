@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ruby:2.5.1
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   python3-dev build-essential python-pip

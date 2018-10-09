@@ -1,6 +1,0 @@
-resource_prefix: meridthio
-ecs_cluster_name: "{{ resource-prefix }}-cluster"
-ecs_service_name: "{{ resource-prefix }}-service"
-ecs_task_name: "{{ resource-prefix }}-task"
-ecs_target_group_name: "{{ resource_prefix }}-tg"
-ecs_load_balancer_name: "{{ resource_prefix }}-lb"

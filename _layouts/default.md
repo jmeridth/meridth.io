@@ -12,14 +12,14 @@
     <title>Meridth, LLC</title>
     <meta name="google-site-verification" content="96f7astghExxqyVq9qASJX_NO_zuhQH-U42tMz8xmFQ" />
 
-    <link rel="shortcut icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/agency.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/custom.css')}}">
+    <link rel="stylesheet" type="text/css" href="assets/css/agency.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
     <!-- Custom Fonts -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -84,10 +84,9 @@
         <!-- /.container-fluid -->
     </nav>
 
-    {% block body %}{% endblock %}
-    {% block error %}{% endblock %}
-    {% include 'footer.html' %}
-    {% include 'scripts.html' %}
+    {{ content }}
+    {% include footer.html %}
+    {% include scripts.html %}
 </body>
 
 </html>

@@ -1,5 +1,6 @@
-{% extends "layout.html" %}
-{% block body %}
+---
+layout: default
+---
 <!-- Header -->
 <header>
     <div class="container">
@@ -89,7 +90,7 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/about/2.jpg') }}" alt="">
+                                <img class="img-circle img-responsive" src="assets/img/about/2.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -103,7 +104,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/about/1.jpg') }}" alt="">
+                            <img class="img-circle img-responsive" src="assets/img/about/1.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -117,7 +118,7 @@
                     </li>
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/about/3.jpg') }}" alt="">
+                            <img class="img-circle img-responsive" src="assets/img/about/3.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -131,7 +132,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/about/4.jpg') }}" alt="">
+                            <img class="img-circle img-responsive" src="assets/img/about/4.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -165,14 +166,14 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/team/bishop.png') }}" alt="">
+                    <img class="img-circle img-responsive" src="assets/img/team/bishop.png" alt="">
                     <h4>Bishop Meridth</h4>
                     <p class="text-muted">Intern Software Consultant</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/team/jason.png') }}" alt="">
+                    <img class="img-circle img-responsive" src="assets/img/team/jason.png" alt="">
                     <h4>Jason Meridth</h4>
                     <p class="text-muted">Owner/Principal Software Consultant</p>
                     <ul class="list-inline social-buttons">
@@ -187,7 +188,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img class="img-circle img-responsive" src="{{ url_for('static', filename='img/team/lucas.png') }}" alt="">
+                    <img class="img-circle img-responsive" src="assets/img/team/lucas.png" alt="">
                     <h4>Lucas Meridth</h4>
                     <p class="text-muted">Intern Software Consultant</p>
                 </div>
@@ -212,7 +213,7 @@
             <div class="col-sm-12">
                 <div class="team-member">
                     <h3 class="section-heading"><a href="https://lifeloop.Live" target="_blank">LifeLoop.Live</a></h3>
-                    <a href="https://lifeloop.live" target="_blank"><img class="img-circle img-responsive" src="{{ url_for('static', filename='img/team/lifeloop_live_logo.png') }}" alt=""></a>
+                    <a href="https://lifeloop.live" target="_blank"><img class="img-circle img-responsive" src="assets/img/team/lifeloop_live_logo.png" alt=""></a>
                     <h4>James Quail</h4>
                     <p class="text-muted">Chief Executive Officer/ Co-Founder</p>
                 </div>
@@ -225,4 +226,3 @@
         </div>
     </div>
 </section>
-{% endblock %}
