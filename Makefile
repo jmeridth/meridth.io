@@ -15,6 +15,10 @@ run : ## run containers
 stop : ## stop containers
 	@docker-compose down
 
+.PHONY : build
+build : ## build docker image
+	@docker build -t meridthio_flask .
+
 .PHONY : deploy
 deploy: ## deploy the website
-	ansible-playbook deploy.yml -i hosts -vv
+	ansible-playbook -i hosts deploy.yml -vv
