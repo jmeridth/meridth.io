@@ -13,11 +13,11 @@ layout: default
 </header>
 
 <!-- Services Section -->
-<section id="services">
+<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Services</h2>
+                <h2 id="services" class="section-heading">Services</h2>
                 <h3 class="section-subheading text-muted">What we can offer you.</h3>
             </div>
         </div>
@@ -77,11 +77,11 @@ layout: default
 </section>
 
 <!-- About Section -->
-<section id="about">
+<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">About</h2>
+                <h2 id="about" class="section-heading">About</h2>
                 <h3 class="section-subheading text-muted">What, Where, When, Why.</h3>
             </div>
         </div>
@@ -156,11 +156,11 @@ layout: default
 </section>
 
 <!-- Team Section -->
-<section id="team" class="bg-light-gray">
+<section class="bg-light-gray">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Our Team</h2>
+                <h2 id="team" class="section-heading">Our Team</h2>
             </div>
         </div>
         <div class="row">
@@ -202,11 +202,11 @@ layout: default
     </div>
 </section>
 <!-- Testimonials -->
-<section id="testimonials">
+<section>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Testimonials</h2>
+                <h2 id="testimonials" class="section-heading">Testimonials</h2>
             </div>
         </div>
         <div class="row">
