@@ -188,7 +188,7 @@ layout: default
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img class="img-circle img-responsive" src="assets/img/team/lucas.png" alt="">
+                    <img class="img-circle img-responsive" src="assets/img/team/lucas.jpg" alt="">
                     <h4>Lucas Meridth</h4>
                     <p class="text-muted">Intern Software Consultant</p>
                 </div>
