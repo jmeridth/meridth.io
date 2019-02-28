@@ -196,7 +196,7 @@ layout: default
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-              <p class="large text-muted">We currently have over {{ years_experience }} years of production experience in small business and enterprise software development.  Please <a href="mailto:jason@meridth.io">email</a> or <a href="tel:210-383-9375">call</a> if you'd like to discuss how we can help your technology needs.</p>
+              <p class="large text-muted">We currently have over 18 years of production experience in small business and enterprise software development.  Please <a href="mailto:jason@meridth.io">email</a> or <a href="tel:210-383-9375">call</a> if you'd like to discuss how we can help your technology needs.</p>
             </div>
         </div>
     </div>
