@@ -2,10 +2,6 @@
   margin: auto;
 }
 
-.logo {
-  content:url("/assets/img/white_logo.png")
-}
-
 .navbar-brand {
   padding: 0px 15px;
 }
