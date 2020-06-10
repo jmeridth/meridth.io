@@ -173,7 +173,7 @@ layout: default
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img class="img-circle img-responsive" src="assets/img/team/jason.png" alt="">
+                    <img class="img-circle img-responsive" src="assets/img/team/jason.jpg" alt="">
                     <h4>Jason Meridth</h4>
                     <p class="text-muted">Owner/Principal Software Consultant</p>
                     <ul class="list-inline social-buttons">
