@@ -164,7 +164,7 @@ layout: default
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-lg-12 text-center">
                 <div class="team-member">
                     <img class="img-circle img-responsive" src="assets/img/team/jason.jpg" alt="">
                     <h4>Jason Meridth</h4>
