@@ -166,13 +166,6 @@ layout: default
         <div class="row">
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img class="img-circle img-responsive" src="assets/img/team/bishop.png" alt="">
-                    <h4>Bishop Meridth</h4>
-                    <p class="text-muted">Intern Software Consultant</p>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
                     <img class="img-circle img-responsive" src="assets/img/team/jason.jpg" alt="">
                     <h4>Jason Meridth</h4>
                     <p class="text-muted">Owner/Principal Software Consultant</p>
@@ -184,13 +177,6 @@ layout: default
                         <li><a href="https://linkedin.com/in/jmeridth"><i class="fa fa-linkedin"></i></a>
                         </li>
                     </ul>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-                    <img class="img-circle img-responsive" src="assets/img/team/lucas.jpg" alt="">
-                    <h4>Lucas Meridth</h4>
-                    <p class="text-muted">Intern Software Consultant</p>
                 </div>
             </div>
         </div>
