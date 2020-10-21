@@ -69,9 +69,6 @@
                         <a class="page-scroll" href="#team">Team</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="mailto:jason@meridth.io">jason@meridth.io</a>
                     </li>
                     <li>

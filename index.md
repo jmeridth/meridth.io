@@ -187,28 +187,3 @@ layout: default
         </div>
     </div>
 </section>
-<!-- Testimonials -->
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 id="testimonials" class="section-heading">Testimonials</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="team-member">
-                    <h3 class="section-heading"><a href="https://lifeloop.Live" target="_blank">LifeLoop.Live</a></h3>
-                    <a href="https://lifeloop.live" target="_blank"><img class="img-circle img-responsive" src="assets/img/team/lifeloop_live_logo.png" alt=""></a>
-                    <h4>James Quail</h4>
-                    <p class="text-muted">Chief Executive Officer/ Co-Founder</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-              <p class="large text-muted">We’ve developed a great partnership with Meridth, LLC and their dedication to our platform and product is evident in all aspects of the site.  We appreciate their attention to detail and creative approach to bringing our platform to life online. It feels as if we have gained an internal team of the company. They provide highly scaled team. The flexibility, agility and scalability are maximum, and it is amazingly how open and trusted they are. They are very proactive and just remarkable in every way.</p>
-            </div>
-        </div>
-    </div>
-</section>
